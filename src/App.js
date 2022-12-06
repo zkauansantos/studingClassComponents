@@ -1,21 +1,16 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React from 'react';
 import GlobalStyle from './styles/global';
 import Layout from './components/Layout';
 import { ThemeProvider } from 'styled-components';
 import themes from './styles/themes';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    
-    this.state = {
-      theme: 'dark',
-    };
 
-    this.handleToggleTheme = this.handleToggleTheme.bind(this);
-  }
+  state = {
+    theme: 'dark',
+  };
 
-  handleToggleTheme() {
+  handleToggleTheme = () => {
     this.setState(prevState => (
       { theme: prevState.theme === 'dark' ? 'light' : 'dark' }
     ));
